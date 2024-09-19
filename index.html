@@ -12,24 +12,23 @@
 <body>
     <header>
         <h1 class="animated-header">Aspire: Student-Built Rover for Lunar Exploration</h1>
-        <img src="minirover.gif" alt="Animated GIF" class="header-gif"> <!-- GIF in the header -->
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#media">Rover</a></li>
+                <li><a href="#media">Rover Specs</a></li>
                 <li><a href="#coding">How to Code</a></li>
                 <li><a href="#mission-control">Mission Control</a></li>
                 <li><a href="#facts">Fun Facts</a></li>
             </ul>
         </nav>
+        <img src="minirover.gif" alt="Mini Rover GIF" class="header-gif"> <!-- Mini Rover GIF -->
     </header>
 
     <section id="about">
         <h2>About the Project</h2>
         <p>Welcome to our project, Aspire! We are students from San Diego Miramar College, and our rover is designed for
             lunar exploration, featuring mecanum wheels and gesture control for wireless navigation. It’s user-friendly
-            and
-            adaptable to various terrains, capable of moving in response to directional inputs.</p>
+            and adaptable to various terrains, capable of moving in response to directional inputs.</p>
         <p>This project aims to emulate NASA's lunar rovers, utilizing comparable design principles and technologies to
             deepen our understanding of robotics and space exploration.</p>
     </section>
@@ -37,15 +36,18 @@
     <section id="media">
         <h2>Rover Specs 👨‍🚀</h2>
         <div class="media-container">
-            <div class="vlog-content">
-                <p>Below is an illustration of how the rover's mecanum wheels allow it to move in various directions:
-                </p>
-                <img src="RoverMove.jpg" alt="Rover Move Image" class="vlog-image"> <!-- Adjusted size -->
+            <div class="left-side">
+                <img src="omni.gif" alt="Rover Movement GIF" class="vlog-gif"> <!-- Omni GIF -->
+                <div class="video-container">
+                    <video controls autoplay loop>
+                        <source src="rovervid.mp4" type="video/mp4"> <!-- Your MP4 video -->
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
-            <div class="image-container">
-                <h3>Meet Aspire, Our Rover Prototype</h3> <!-- New Heading -->
-                <img src="darover.jpg" alt="Rover Image" class="large-image"> <!-- Rover Image -->
-                <img src="omni.gif" alt="Vlog GIF" class="vlog-gif"> <!-- Vlog GIF -->
+            <div class="right-side">
+                <img src="RoverMove.jpg" alt="Vlog Image" class="vlog-image"> <!-- Vlog image -->
+                <img src="darover.jpg" alt="Additional Image" class="additional-image"> <!-- Additional image -->
             </div>
         </div>
     </section>
@@ -62,31 +64,27 @@ if (mpuData.xAxisValue < 0 && abs(mpuData.yAxisValue) < 15) { Serial.println("St
         <p>This function sets all four motors to move the rover forward.</p>
     </section>
 
-    <div class="side-by-side">
-        <section id="mission-control">
-            <h2>Mission Control</h2>
-            <p>Our rover is designed with the following key features:</p>
-            <ul>
-                <li><strong>Adaptive Navigation:</strong> Equipped with mecanum wheels, better for diverse terrain.</li>
-                <li><strong>Gesture Control:</strong> Gesture recognition using ESP32NOW</li>
-            </ul>
-            <h3>Project Timeline</h3>
-            <ol>
-                <li>Concept Development: May 2024</li>
-                <li>Building Prototype: May 2024</li>
-                <li>Testing Phase: June 2024</li>
-                <li>Final Adjustments: August 2024</li>
-            </ol>
-        </section>
+    <section id="mission-control">
+        <h2>Mission Control</h2>
+        <p>Our rover is designed with the following key features:</p>
+        <ul>
+            <li><strong>Adaptive Navigation:</strong> Equipped with mecanum wheels, better for diverse terrain.</li>
+            <li><strong>Gesture Control:</strong> Gesture recognition using ESP32NOW</li>
+        </ul>
+        <h3>Project Timeline</h3>
+        <ol>
+            <li>Concept Development: May 2024</li>
+            <li>Building Prototype: May 2024</li>
+            <li>Testing Phase: June 2024</li>
+            <li>Final Adjustments: August 2024</li>
+        </ol>
+    </section>
 
-        <section id="facts">
-            <h2>Fun Facts 🌌</h2>
-            <div class="fun-facts-container">
-                <p id="fun-fact">Click the button for a fun fact about lunar exploration!</p>
-                <button onclick="showFunFact()">Get Fun Fact</button>
-            </div>
-        </section>
-    </div>
+    <section id="facts">
+        <h2>Fun Facts 🌌</h2>
+        <p id="fun-fact">Click the button for a fun fact about lunar exploration!</p>
+        <button onclick="showFunFact()">Get Fun Fact</button>
+    </section>
 
     <footer>
         <button onclick="toggleMusic()">Toggle Background Music</button>
