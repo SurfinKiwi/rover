@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspire Rover Project</title>
+    <link rel="icon" href="favis.ico" type="image/x-icon"> <!-- Favicon -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="animated-header">Aspire: Student-Built Rover for Lunar Exploration</h1>
+        <img src="minirover.gif" alt="Animated GIF" class="header-gif"> <!-- GIF in the header -->
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#media">Rover</a></li>
+                <li><a href="#coding">How to Code</a></li>
+                <li><a href="#mission-control">Mission Control</a></li>
+                <li><a href="#facts">Fun Facts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About the Project</h2>
+        <p>Welcome to our project, Aspire! We are students from San Diego Miramar College, and our rover is designed for
+            lunar exploration, featuring mecanum wheels and gesture control for wireless navigation. It’s user-friendly
+            and
+            adaptable to various terrains, capable of moving in response to directional inputs.</p>
+        <p>This project aims to emulate NASA's lunar rovers, utilizing comparable design principles and technologies to
+            deepen our understanding of robotics and space exploration.</p>
+    </section>
+
+    <section id="media">
+        <h2>Rover Specs 👨‍🚀</h2>
+        <div class="media-container">
+            <div class="vlog-content">
+                <p>Below is an illustration of how the rover's mecanum wheels allow it to move in various directions:
+                </p>
+                <img src="RoverMove.jpg" alt="Rover Move Image" class="vlog-image"> <!-- Adjusted size -->
+            </div>
+            <div class="image-container">
+                <h3>Meet Aspire, Our Rover Prototype</h3> <!-- New Heading -->
+                <img src="darover.jpg" alt="Rover Image" class="large-image"> <!-- Rover Image -->
+                <img src="omni.gif" alt="Vlog GIF" class="vlog-gif"> <!-- Vlog GIF -->
+            </div>
+        </div>
+    </section>
+
+    <section id="coding">
+        <h2>How to Code the Wheels</h2>
+        <p>To control the mecanum wheels, we used C++ programming with the ESP32 microcontroller.</p>
+        <pre>
+<code>
+if (mpuData.xAxisValue < 0 && abs(mpuData.yAxisValue) < 15) { Serial.println("Straight Forward"); forward_wheel(FAI1,
+    FAI2); forward_wheel(FBI1, FBI2); forward_wheel(RAI1, RAI2); forward_wheel(RBI1, RBI2); delay(timeDelay); }
+</code>
+        </pre>
+        <p>This function sets all four motors to move the rover forward.</p>
+    </section>
+
+    <div class="side-by-side">
+        <section id="mission-control">
+            <h2>Mission Control</h2>
+            <p>Our rover is designed with the following key features:</p>
+            <ul>
+                <li><strong>Adaptive Navigation:</strong> Equipped with mecanum wheels, better for diverse terrain.</li>
+                <li><strong>Gesture Control:</strong> Gesture recognition using ESP32NOW</li>
+            </ul>
+            <h3>Project Timeline</h3>
+            <ol>
+                <li>Concept Development: May 2024</li>
+                <li>Building Prototype: May 2024</li>
+                <li>Testing Phase: June 2024</li>
+                <li>Final Adjustments: August 2024</li>
+            </ol>
+        </section>
+
+        <section id="facts">
+            <h2>Fun Facts 🌌</h2>
+            <div class="fun-facts-container">
+                <p id="fun-fact">Click the button for a fun fact about lunar exploration!</p>
+                <button onclick="showFunFact()">Get Fun Fact</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <button onclick="toggleMusic()">Toggle Background Music</button>
+        <audio id="background-music" loop autoplay>
+            <source src="fish.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <p>&copy; 2024 Aspire Rover Project. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
