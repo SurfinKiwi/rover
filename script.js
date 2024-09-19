@@ -25,3 +25,4 @@ function toggleMusic() {
     music.pause();
   }
 }
+
